@@ -7,7 +7,8 @@ REST API Server to **GET** what you **POST**.
 ```
 % go version
 go version go1.22.3 darwin/arm64
-% go run main.go 80&
+% go build -o echoHttp main.go
+% ./echoHttp 80&
 ```
 
 ## POST
