@@ -32,6 +32,11 @@ func listenForMessages() {
 }
 
 func messagePost(c http.ResponseWriter, req *http.Request) {
+	if req.URL.Path == "/clear" && req.Method == "POST" {
+		msg = Message{}
+		c.WriteHeader(http.StatusAccepted)
+		return
+	}
 	if req.URL.Path != "/" {
 		http.NotFound(c, req)
 		return
